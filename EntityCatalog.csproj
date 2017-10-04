@@ -109,6 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="DataHandler\DataHandler.csproj">
+      <Project>{78782d65-e379-44e2-be7e-a72f363d7e2d}</Project>
+      <Name>DataHandler</Name>
+    </ProjectReference>
     <ProjectReference Include="DbHandler\DbHandler.csproj">
       <Project>{f5b03e78-6d1d-455f-b789-38c7c6657cc3}</Project>
       <Name>DbHandler</Name>

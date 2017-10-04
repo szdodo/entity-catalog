@@ -28,3 +28,6 @@ C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\App.baml
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.dll
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.pdb
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.dll.config
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DataHandler.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DataHandler.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DataHandler.dll.config

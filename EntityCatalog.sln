@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{737D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbHandler", "DbHandler\DbHandler.csproj", "{F5B03E78-6D1D-455F-B789-38C7C6657CC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandler", "DataHandler\DataHandler.csproj", "{78782D65-E379-44E2-BE7E-A72F363D7E2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F5B03E78-6D1D-455F-B789-38C7C6657CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B03E78-6D1D-455F-B789-38C7C6657CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B03E78-6D1D-455F-B789-38C7C6657CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78782D65-E379-44E2-BE7E-A72F363D7E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78782D65-E379-44E2-BE7E-A72F363D7E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78782D65-E379-44E2-BE7E-A72F363D7E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78782D65-E379-44E2-BE7E-A72F363D7E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

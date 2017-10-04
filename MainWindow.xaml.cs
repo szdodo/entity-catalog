@@ -1,7 +1,9 @@
 ﻿using DB;
 using DbHandler;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using DataHandler;
 
 namespace EntityCatalog
 {
@@ -10,27 +12,23 @@ namespace EntityCatalog
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Book> loadedBooks;
+        List<Movie> loadedMovies;
+
         public MainWindow()
         {
             InitializeComponent();
+            loadedBooks = LoadFromDb.LoadAllBooks();
+            loadedMovies = LoadFromDb.LoadAllMovies();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //AddToDb.AddNewBook("új könyv", "új szerző", "új műfaj");
+            //AddToDb.AddNewMovie("új dvd", "új rendező", "új műfaj", true);
             CreateBookColumns();
-            DataLV.ItemsSource=LoadFromDb.LoadAllBooks();
+            DataLV.ItemsSource = loadedBooks;
         }
-
-        private void AddNewBook()
-        {
-            using (var db = new CatalogContext())
-            {
-                var book = new Book { Title = "probacím2", Author = "próbaszerző2" };
-                db.Books.Add(book);
-                db.SaveChanges();
-            }
-        }
-
 
         private void CreateBookColumns()
         {
@@ -146,8 +144,22 @@ namespace EntityCatalog
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-            CreateBookColumns();
-            DataLV.ItemsSource = LoadFromDb.LoadSearchedBooks(SearchTB.Text);
+            if (BookCB.IsChecked ?? true)
+            {
+                CreateBookColumns();
+                DataLV.ItemsSource = Sorter.SearchBookByText(loadedBooks, SearchTB.Text);
+            }else if (DvdCB.IsChecked ?? true){
+                CreateMovieColumns();
+                DataLV.ItemsSource = LoadFromDb.LoadSearchedMovies(true, SearchTB.Text);
+            } else if (VhsCB.IsChecked ?? true)
+            {
+                CreateMovieColumns();
+                DataLV.ItemsSource = LoadFromDb.LoadSearchedMovies(true, SearchTB.Text);
+            }
+            else
+            {
+                MessageBox.Show("Kérem előbb válassza ki, hogy milyen kategóriában szeretne keresni.");
+            }
         }
 
         private void SearchTB_GotFocus(object sender, RoutedEventArgs e)

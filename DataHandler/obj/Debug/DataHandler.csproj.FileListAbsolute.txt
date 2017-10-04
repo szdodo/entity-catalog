@@ -1,0 +1,14 @@
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DataHandler.dll.config
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DataHandler.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DataHandler.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DB.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\EntityFramework.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DB.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\DB.dll.config
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\EntityFramework.xml
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\obj\Debug\DataHandler.csprojResolveAssemblyReference.cache
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\obj\Debug\DataHandler.csproj.CoreCompileInputs.cache
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\obj\Debug\DataHandler.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\DataHandler\obj\Debug\DataHandler.pdb
