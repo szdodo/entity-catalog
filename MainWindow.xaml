@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EntityCatalog"
         mc:Ignorable="d"
-        Title="Catalog" Height="350" Width="525"
+        Title="Catalog" Height="350" Width="525" WindowState="Maximized"
         SizeChanged="Window_SizeChanged">
     <Grid>
 
-        <Button Content="Button" HorizontalAlignment="Left" Margin="97,53,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <ListView Name="lw" Margin="32,103,32,10" >
+        <Button Content="Button" HorizontalAlignment="Left" Margin="465,10,0,0" VerticalAlignment="Top" Width="42" Click="Button_Click" Height="18"/>
+        <ListView Name="DataLV" Margin="32,103,32,10" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <CheckBox Name="BookCB" Content="Books" HorizontalAlignment="Left" Margin="57,20,0,0" VerticalAlignment="Top" Checked="BookCB_Checked"/>
-        <CheckBox Name="DvdCB" Content="Dvds" HorizontalAlignment="Left" Margin="129,20,0,0" VerticalAlignment="Top" Checked="DvdCB_Checked"/>
+        <CheckBox Name="BookCB" Content="Books" HorizontalAlignment="Left" Margin="32,20,0,0" VerticalAlignment="Top" Checked="BookCB_Checked"/>
+        <CheckBox Name="DvdCB" Content="Dvds" HorizontalAlignment="Left" Margin="115,20,0,0" VerticalAlignment="Top" Checked="DvdCB_Checked"/>
         <CheckBox Name="VhsCB" Content="VHS" HorizontalAlignment="Left" Margin="194,20,0,0" VerticalAlignment="Top" Checked="VhsCB_Checked"/>
+        <TextBox Name="SearchTB" HorizontalAlignment="Left" Height="29" Margin="32,55,0,0" TextWrapping="Wrap" Text="Keresendő szöveg" VerticalAlignment="Top" Width="236" GotFocus="SearchTB_GotFocus"/>
+        <Button Name="SearchBtn" Content="Keresés" HorizontalAlignment="Left" Margin="364,55,0,0" VerticalAlignment="Top" Width="86" Height="29" Click="SearchBtn_Click"/>
     </Grid>
 </Window>

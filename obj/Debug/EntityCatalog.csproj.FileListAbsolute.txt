@@ -20,3 +20,11 @@ C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\EntityCatalog.pdb
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DB.dll
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DB.pdb
 C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DB.dll.config
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\MaterialDesignColors.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\App.baml
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\bin\Debug\DbHandler.dll.config

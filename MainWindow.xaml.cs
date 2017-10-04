@@ -1,8 +1,6 @@
-﻿using System.Windows;
-using DB;
-using System.Linq;
-using System.Windows.Forms;
-using System.Collections.Generic;
+﻿using DB;
+using DbHandler;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace EntityCatalog
@@ -19,7 +17,8 @@ namespace EntityCatalog
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LoadBooks();
+            CreateBookColumns();
+            DataLV.ItemsSource=LoadFromDb.LoadAllBooks();
         }
 
         private void AddNewBook()
@@ -32,23 +31,6 @@ namespace EntityCatalog
             }
         }
 
-        private void LoadBooks()
-        {
-            CreateBookColumns();
-
-            using (var db = new CatalogContext())
-            {
-                var query = from b in db.Books
-                            select b;
-
-                List<Book> books = new List<Book>();
-                foreach (var item in query)
-                {
-                    books.Add(item);
-                }
-                lw.ItemsSource = books;
-            }
-        }
 
         private void CreateBookColumns()
         {
@@ -59,28 +41,28 @@ namespace EntityCatalog
             GridViewColumn idColumn = new GridViewColumn();
             idColumn.DisplayMemberBinding = new System.Windows.Data.Binding("BookId");
             idColumn.Header = "Id";
-            idColumn.Width = lw.ActualWidth / 4;
+            idColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(idColumn);
 
             GridViewColumn titleColumn = new GridViewColumn();
             titleColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Title");
             titleColumn.Header = "Title";
-            titleColumn.Width = lw.ActualWidth / 4;
+            titleColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(titleColumn);
 
             GridViewColumn authorColumn = new GridViewColumn();
             authorColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Author");
             authorColumn.Header = "Author";
-            authorColumn.Width = lw.ActualWidth / 4;
+            authorColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(authorColumn);
 
             GridViewColumn genreColumn = new GridViewColumn();
             genreColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Genre");
             genreColumn.Header = "Genre";
-            genreColumn.Width = lw.ActualWidth / 4;
+            genreColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(genreColumn);
 
-            lw.View = grdView;
+            DataLV.View = grdView;
         }
 
         private void CreateMovieColumns()
@@ -92,34 +74,34 @@ namespace EntityCatalog
             GridViewColumn idColumn = new GridViewColumn();
             idColumn.DisplayMemberBinding = new System.Windows.Data.Binding("MovieId");
             idColumn.Header = "Id";
-            idColumn.Width = lw.ActualWidth / 5;
+            idColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(idColumn);
 
             GridViewColumn titleColumn = new GridViewColumn();
             titleColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Title");
             titleColumn.Header = "Title";
-            titleColumn.Width = lw.ActualWidth / 5;
+            titleColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(titleColumn);
 
             GridViewColumn directorColumn = new GridViewColumn();
             directorColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Director");
             directorColumn.Header = "Author";
-            directorColumn.Width = lw.ActualWidth / 5;
+            directorColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(directorColumn);
 
             GridViewColumn genreColumn = new GridViewColumn();
             genreColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Genre");
             genreColumn.Header = "Genre";
-            genreColumn.Width = lw.ActualWidth / 5;
+            genreColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(genreColumn);
 
             GridViewColumn actorsColumn = new GridViewColumn();
             actorsColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Actors");
             actorsColumn.Header = "Actors";
-            actorsColumn.Width = lw.ActualWidth / 5;
+            actorsColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(actorsColumn);
 
-            lw.View = grdView;
+            DataLV.View = grdView;
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -129,7 +111,7 @@ namespace EntityCatalog
             if (BookCB.IsChecked ?? true)
             {
                 CreateBookColumns();
-                LoadBooks();
+                //LoadBooks();
             }
             else
             {
@@ -160,6 +142,17 @@ namespace EntityCatalog
         private void VhsCB_Checked(object sender, RoutedEventArgs e)
         {
             BookCB.IsChecked = false;
+        }
+
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreateBookColumns();
+            DataLV.ItemsSource = LoadFromDb.LoadSearchedBooks(SearchTB.Text);
+        }
+
+        private void SearchTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchTB.Text = "";
         }
     }
 }

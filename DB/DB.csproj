@@ -50,7 +50,7 @@
     <Compile Include="Actor.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="CatalogContext.cs" />
-    <Compile Include="Dvd.cs" />
+    <Compile Include="Movie.cs" />
     <Compile Include="Migrations\201709291818183_InitialCreate.cs" />
     <Compile Include="Migrations\201709291818183_InitialCreate.Designer.cs">
       <DependentUpon>201709291818183_InitialCreate.cs</DependentUpon>
