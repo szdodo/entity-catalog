@@ -1,0 +1,8 @@
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\bin\Debug\netstandard1.4\Database.deps.json
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\bin\Debug\netstandard1.4\Database.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\bin\Debug\netstandard1.4\Database.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\obj\Debug\netstandard1.4\Database.csprojResolveAssemblyReference.cache
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\obj\Debug\netstandard1.4\Database.csproj.CoreCompileInputs.cache
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\obj\Debug\netstandard1.4\Database.AssemblyInfo.cs
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\obj\Debug\netstandard1.4\Database.dll
+C:\Users\Dodo\Source\Repos\EntityCatalog\Database\obj\Debug\netstandard1.4\Database.pdb
