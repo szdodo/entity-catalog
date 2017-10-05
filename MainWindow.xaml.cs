@@ -150,11 +150,11 @@ namespace EntityCatalog
                 DataLV.ItemsSource = Sorter.SearchBookByText(loadedBooks, SearchTB.Text);
             }else if (DvdCB.IsChecked ?? true){
                 CreateMovieColumns();
-                DataLV.ItemsSource = LoadFromDb.LoadSearchedMovies(true, SearchTB.Text);
+                DataLV.ItemsSource = Sorter.SearchDvdByText(loadedMovies, SearchTB.Text);
             } else if (VhsCB.IsChecked ?? true)
             {
                 CreateMovieColumns();
-                DataLV.ItemsSource = LoadFromDb.LoadSearchedMovies(true, SearchTB.Text);
+                DataLV.ItemsSource = Sorter.SearchVhsByText(loadedMovies, SearchTB.Text);
             }
             else
             {

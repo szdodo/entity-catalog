@@ -1,4 +1,6 @@
-﻿namespace DB
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DB
 {
     public class Book
     {

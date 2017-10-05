@@ -10,7 +10,7 @@ namespace DataHandler
             List<Book> searchedList = new List<Book>();
             foreach(Book book in books)
             {
-                if (book.Title.Contains(searchedText) || book.Author.Contains(searchedText) || book.Genre.Contains(searchedText)){
+                if ((book.Title!=null && book.Title.Contains(searchedText)) || (book.Author!=null && book.Author.Contains(searchedText)) || (book.Genre!=null && book.Genre.Contains(searchedText))){
                     searchedList.Add(book);
                 }
             }
@@ -22,7 +22,7 @@ namespace DataHandler
             List<Movie> searchedList = new List<Movie>();
             foreach (Movie movie in movies)
             {
-                if (movie.Dvd && movie.Title.Contains(searchedText) || movie.Director.Contains(searchedText) || movie.Genre.Contains(searchedText))
+                if ((movie.Dvd && ((movie.Title!=null && movie.Title.Contains(searchedText)) || (movie.Director!=null && movie.Director.Contains(searchedText)) || (movie.Genre!=null && movie.Genre.Contains(searchedText)))))
                 {
                     searchedList.Add(movie);
                 }
@@ -35,7 +35,7 @@ namespace DataHandler
             List<Movie> searchedList = new List<Movie>();
             foreach (Movie movie in movies)
             {
-                if (!movie.Dvd && movie.Title.Contains(searchedText) || movie.Director.Contains(searchedText) || movie.Genre.Contains(searchedText) || SearchActors(movie, searchedText))
+                if (!movie.Dvd && ((movie.Title != null && movie.Title.Contains(searchedText)) || (movie.Director != null && movie.Director.Contains(searchedText)) || (movie.Genre != null && movie.Genre.Contains(searchedText)))) //|| SearchActors(movie, searchedText)
                 {
                     searchedList.Add(movie);
                 }
@@ -47,7 +47,7 @@ namespace DataHandler
         {
             foreach(Actor actor in movie.Actors)
             {
-                if (actor.Name.Contains(searchedText))
+                if (actor.Name!= null && actor.Name.Contains(searchedText))
                     return true;
             }
             return false;
