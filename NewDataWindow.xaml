@@ -1,0 +1,22 @@
+﻿<Window x:Class="EntityCatalog.NewDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EntityCatalog"
+        mc:Ignorable="d"
+        Title="Új Adat" Height="350" Width="500">
+    <Grid>
+        <Label Name="TitleLbl" Content="Cím:" HorizontalAlignment="Left" Margin="24,82,0,0" VerticalAlignment="Top" Width="58" Height="29" RenderTransformOrigin="0.517,1"/>
+        <TextBox Name="TitleTB" Height="29" Margin="91,82,37,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <Label Name="AuthorLbl" Content="Szerző:" HorizontalAlignment="Left" Margin="24,129,0,0" VerticalAlignment="Top" Height="27" Width="62"/>
+        <TextBox Name="AuthorTB" Height="27" Margin="91,129,37,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Name="GenreLbl" Content="Műfaj:" HorizontalAlignment="Left" Margin="24,180,0,0" VerticalAlignment="Top" Height="29" Width="47"/>
+        <TextBox Name="GenreTB" Height="28" Margin="91,180,37,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Name="NewBookBtn" Content="Mentés" Margin="164,259,176,28" Height="Auto" Click="NewBookBtn_Click" RenderTransformOrigin="0.765,0.667"/>
+        <CheckBox Name="BookCB" Content="Könyv" HorizontalAlignment="Left" Margin="91,25,0,0" VerticalAlignment="Top" Checked="BookCB_Checked"/>
+        <CheckBox Name="DvdCB" Content="DVD" HorizontalAlignment="Left" Margin="225,25,0,0" VerticalAlignment="Top" Checked="DvdCB_Checked"/>
+        <CheckBox Name="VhsCB" Content="VHS" HorizontalAlignment="Left" Margin="354,25,0,0" VerticalAlignment="Top" Checked="VhsCB_Checked"/>
+
+    </Grid>
+</Window>

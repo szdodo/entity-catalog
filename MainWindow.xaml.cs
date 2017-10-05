@@ -24,10 +24,12 @@ namespace EntityCatalog
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //AddToDb.AddNewBook("új könyv", "új szerző", "új műfaj");
-            //AddToDb.AddNewMovie("új dvd", "új rendező", "új műfaj", true);
-            CreateBookColumns();
-            DataLV.ItemsSource = loadedBooks;
+            Window newBookWindow= new NewDataWindow();
+            if (PresentationSource.FromVisual(newBookWindow) == null)
+            {
+                loadedBooks = LoadFromDb.LoadAllBooks();
+                loadedMovies = LoadFromDb.LoadAllMovies();
+            }
         }
 
         private void CreateBookColumns()
@@ -101,7 +103,7 @@ namespace EntityCatalog
 
             DataLV.View = grdView;
         }
-
+        //amikor hozzáadunk v törlünk v módosítunk frissüljön a lista!
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             //check which one  is chosen
@@ -148,7 +150,8 @@ namespace EntityCatalog
             {
                 CreateBookColumns();
                 DataLV.ItemsSource = Sorter.SearchBookByText(loadedBooks, SearchTB.Text);
-            }else if (DvdCB.IsChecked ?? true){
+            }else if (DvdCB.IsChecked ?? true)
+            {
                 CreateMovieColumns();
                 DataLV.ItemsSource = Sorter.SearchDvdByText(loadedMovies, SearchTB.Text);
             } else if (VhsCB.IsChecked ?? true)

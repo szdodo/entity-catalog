@@ -6,9 +6,9 @@ C:\Users\Dodo\Source\Repos\EntityCatalog\DB\bin\Debug\EntityFramework.SqlServer.
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\bin\Debug\EntityFramework.xml
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.Migrations.InitialCreate.resources
+C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.Migrations.AddMovies.resources
+C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.csproj.GenerateResource.Cache
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.dll
 C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.pdb
-C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.Migrations.InitialCreate.resources
-C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.csproj.GenerateResource.Cache
-C:\Users\Dodo\Source\Repos\EntityCatalog\DB\obj\Debug\DB.Migrations.AddMovies.resources
