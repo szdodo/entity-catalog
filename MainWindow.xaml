@@ -10,7 +10,7 @@
     <Grid>
 
         <Button Content="Button" HorizontalAlignment="Left" Margin="465,10,0,0" VerticalAlignment="Top" Width="42" Click="Button_Click" Height="18"/>
-        <ListView Name="DataLV" Margin="32,103,32,10" >
+        <ListView Name="DataLV" Margin="32,103,32,10" SelectionChanged="DataLV_SelectionChanged" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

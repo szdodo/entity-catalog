@@ -33,3 +33,5 @@ C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\EntityCatalog.csproj.Generate
 C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\EntityCatalog.csproj.CoreCompileInputs.cache
 C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\EntityCatalog.exe
 C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\EntityCatalog.pdb
+C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\ModifyWindow.g.cs
+C:\Users\Dodo\Source\Repos\EntityCatalog\obj\Debug\ModifyWindow.baml

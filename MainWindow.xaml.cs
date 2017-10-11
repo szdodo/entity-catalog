@@ -36,7 +36,7 @@ namespace EntityCatalog
         {
             GridView grdView = new GridView();
             grdView.AllowsColumnReorder = true;
-            grdView.ColumnHeaderToolTip = "Books";
+            grdView.ColumnHeaderToolTip = "Könyvek";
 
             GridViewColumn idColumn = new GridViewColumn();
             idColumn.DisplayMemberBinding = new System.Windows.Data.Binding("BookId");
@@ -46,19 +46,19 @@ namespace EntityCatalog
 
             GridViewColumn titleColumn = new GridViewColumn();
             titleColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Title");
-            titleColumn.Header = "Title";
+            titleColumn.Header = "Cím";
             titleColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(titleColumn);
 
             GridViewColumn authorColumn = new GridViewColumn();
             authorColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Author");
-            authorColumn.Header = "Author";
+            authorColumn.Header = "Szerző";
             authorColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(authorColumn);
 
             GridViewColumn genreColumn = new GridViewColumn();
             genreColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Genre");
-            genreColumn.Header = "Genre";
+            genreColumn.Header = "Műfaj";
             genreColumn.Width = DataLV.ActualWidth / 4;
             grdView.Columns.Add(genreColumn);
 
@@ -69,7 +69,7 @@ namespace EntityCatalog
         {
             GridView grdView = new GridView();
             grdView.AllowsColumnReorder = true;
-            grdView.ColumnHeaderToolTip = "Movies";
+            grdView.ColumnHeaderToolTip = "Filmek";
 
             GridViewColumn idColumn = new GridViewColumn();
             idColumn.DisplayMemberBinding = new System.Windows.Data.Binding("MovieId");
@@ -79,25 +79,25 @@ namespace EntityCatalog
 
             GridViewColumn titleColumn = new GridViewColumn();
             titleColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Title");
-            titleColumn.Header = "Title";
+            titleColumn.Header = "Cím";
             titleColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(titleColumn);
 
             GridViewColumn directorColumn = new GridViewColumn();
             directorColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Director");
-            directorColumn.Header = "Author";
+            directorColumn.Header = "Rendező";
             directorColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(directorColumn);
 
             GridViewColumn genreColumn = new GridViewColumn();
             genreColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Genre");
-            genreColumn.Header = "Genre";
+            genreColumn.Header = "Műfaj";
             genreColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(genreColumn);
 
             GridViewColumn actorsColumn = new GridViewColumn();
             actorsColumn.DisplayMemberBinding = new System.Windows.Data.Binding("Actors");
-            actorsColumn.Header = "Actors";
+            actorsColumn.Header = "Színészek";
             actorsColumn.Width = DataLV.ActualWidth / 5;
             grdView.Columns.Add(actorsColumn);
 
@@ -146,28 +146,64 @@ namespace EntityCatalog
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
+            bool searched = false;
             if (BookCB.IsChecked ?? true)
             {
                 CreateBookColumns();
                 DataLV.ItemsSource = Sorter.SearchBookByText(loadedBooks, SearchTB.Text);
-            }else if (DvdCB.IsChecked ?? true)
-            {
-                CreateMovieColumns();
-                DataLV.ItemsSource = Sorter.SearchDvdByText(loadedMovies, SearchTB.Text);
-            } else if (VhsCB.IsChecked ?? true)
-            {
-                CreateMovieColumns();
-                DataLV.ItemsSource = Sorter.SearchVhsByText(loadedMovies, SearchTB.Text);
+                searched = true;
             }
             else
             {
+                CreateMovieColumns();
+                List<Movie> source = new List<Movie>();
+                if (DvdCB.IsChecked ?? true)
+                {
+                    source.AddRange(Sorter.SearchDvdByText(loadedMovies, SearchTB.Text));
+                    searched = true;
+                }
+                if (VhsCB.IsChecked ?? true)
+                {
+                    source.AddRange(Sorter.SearchVhsByText(loadedMovies, SearchTB.Text));
+                    searched = true;
+                }
+                
+                DataLV.ItemsSource = source;
+            }
+            if (!searched)
+            {
+
                 MessageBox.Show("Kérem előbb válassza ki, hogy milyen kategóriában szeretne keresni.");
+            }
+
+            if (DataLV.ItemsSource == null)
+            {
+                MessageBox.Show("Nincs találat.");
             }
         }
 
         private void SearchTB_GotFocus(object sender, RoutedEventArgs e)
         {
             SearchTB.Text = "";
+        }
+
+        //amikor újra listáz nullreference errort ad
+        private void DataLV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var type = DataLV.SelectedItem.GetType();
+            if (type.ToString() == "DB.Book")
+            {
+                Window newBookWindow = new ModifyWindow((Book)DataLV.SelectedItem);
+
+            }
+            else {
+                Window newBookWindow = new ModifyWindow((Movie)DataLV.SelectedItem);
+
+            }
+            
+            //Book type = (Book)DataLV.SelectedItem;
+            var type2 = type.ToString();
+
         }
     }
 }
