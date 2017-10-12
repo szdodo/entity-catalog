@@ -13,6 +13,7 @@
         <TextBox Name="AuthorTB" Height="27" Margin="91,102,37,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Name="GenreLbl" Content="Műfaj:" HorizontalAlignment="Left" Margin="24,162,0,0" VerticalAlignment="Top" Height="29" Width="47"/>
         <TextBox Name="GenreTB" Height="28" Margin="91,163,37,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Name="NewBookBtn" Content="Mentés" Margin="164,259,176,28" Height="Auto" RenderTransformOrigin="0.765,0.667"/>
+        <Button Name="ModifyBtn" Content="Mentés" Margin="272,259,68,28" Height="Auto" RenderTransformOrigin="0.765,0.667" Click="ModifyBtn_Click"/>
+        <Button Name="CancelBtn" Content="Mégse" Margin="81,259,311,28" Height="Auto" RenderTransformOrigin="0.765,0.667" Click="CancelBtn_Click"/>
     </Grid>
 </Window>

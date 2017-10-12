@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AddToDb.cs" />
     <Compile Include="LoadFromDb.cs" />
+    <Compile Include="ModifyRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

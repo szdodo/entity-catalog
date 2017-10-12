@@ -25,11 +25,7 @@ namespace EntityCatalog
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window newBookWindow= new NewDataWindow();
-            if (PresentationSource.FromVisual(newBookWindow) == null)
-            {
-                loadedBooks = LoadFromDb.LoadAllBooks();
-                loadedMovies = LoadFromDb.LoadAllMovies();
-            }
+            ReloadAfterWindow(newBookWindow);
         }
 
         private void CreateBookColumns()
@@ -180,6 +176,8 @@ namespace EntityCatalog
             {
                 MessageBox.Show("Nincs találat.");
             }
+            //DataLV.SelectionChanged += DataLV_SelectionChanged;
+
         }
 
         private void SearchTB_GotFocus(object sender, RoutedEventArgs e)
@@ -194,16 +192,26 @@ namespace EntityCatalog
             if (type.ToString() == "DB.Book")
             {
                 Window newBookWindow = new ModifyWindow((Book)DataLV.SelectedItem);
-
+                DataLV.SelectionChanged -= DataLV_SelectionChanged;
+                ReloadAfterWindow(newBookWindow);
             }
             else {
-                Window newBookWindow = new ModifyWindow((Movie)DataLV.SelectedItem);
-
+                Window newMovieWindow = new ModifyWindow((Movie)DataLV.SelectedItem);
+                DataLV.SelectionChanged -= DataLV_SelectionChanged;
+                ReloadAfterWindow(newMovieWindow);
             }
-            
-            //Book type = (Book)DataLV.SelectedItem;
-            var type2 = type.ToString();
-
+            SearchBtn_Click(sender, e);
         }
+
+        private void ReloadAfterWindow(Window newWindow)
+        {
+            if (PresentationSource.FromVisual(newWindow) == null)
+            {
+                loadedBooks = LoadFromDb.LoadAllBooks();
+                loadedMovies = LoadFromDb.LoadAllMovies();
+            }
+        }
+
+      
     }
 }
